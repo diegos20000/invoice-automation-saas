@@ -1,18 +1,29 @@
 # Invoice Automation SaaS
 
-Automation platform that processes invoice files, extracts data using OCR, and stores documents in Google Drive.
+A backend automation project that uploads invoice images, extracts text using OCR, parses key invoice fields, and stores the results in MongoDB. This project is being built as a SaaS-style document automation system for small service businesses.
+
+## Current Features
+
+- Upload invoice images through an API endpoint
+- Store uploaded files locally
+- Extract invoice text using OCR with Tesseract
+- Parse invoice data from OCR text
+- Save invoice metadata into MongoDB
+- Docker-based local MongoDB setup
 
 ## Tech Stack
 
 - Node.js
 - Express
+- Multer
+- Tesseract.js
 - MongoDB
-- OCR (Tesseract)
-- Google Drive API
+- Mongoose
+- Docker
+- dotenv
+- CORS
 
-## Features
+## Current Backend Flow
 
-- Upload invoice files
-- Extract invoice data using AI
-- Store files in Google Drive
-- Save invoice metadata in database
+```text
+Client → POST /upload → Save file locally → OCR → Parse invoice data → Save to MongoDB
